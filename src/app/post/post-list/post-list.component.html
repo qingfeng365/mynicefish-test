@@ -1,0 +1,16 @@
+
+<div class="post-list-container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div *ngFor="let post of postList" class="post-item-container">
+        <h5><a [routerLink]="['/post/postdetail',post.postId]">{{post.title}}</a></h5>
+        <p><i class="fa fa-thumbs-up"></i>&nbsp;{{post.likedTimes}} &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-comment"></i>&nbsp;{{post.commentTimes}} &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-eye"></i>&nbsp;{{post.readTimes}} &nbsp;&nbsp;&nbsp;&nbsp;{{post.userName }} &nbsp;&nbsp;&nbsp;&nbsp;{{post.postTime}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <p-paginator [rows]="pageSize" [totalRecords]="allRecordCount" (onPageChange)="pageChanged($event)"></p-paginator>
+    </div>
+  </div>
+</div>

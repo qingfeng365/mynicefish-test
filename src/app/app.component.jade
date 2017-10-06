@@ -1,0 +1,26 @@
+nav.navbar.navbar-expand-lg.navbar-dark.bg-navbar
+  .container
+    a.navbar-brand(routerLink="posts") NiceFish
+    button.navbar-toggler(type="button",
+      data-toggle="collapse",
+      data-target="#navbarSupportedContent")
+      span.navbar-toggler-icon
+    #navbarSupportedContent.collapse.navbar-collapse
+      ul.navbar-nav.mr-auto
+        li.nav-item(routerLinkActive="active")
+          a.nav-link(routerLink="posts") 动态
+        li.nav-item(routerLinkActive="active")
+          a.nav-link(routerLink="echart") 集成图表
+      ul.navbar-nav.ml-auto
+        li.nav-item(routerLinkActive="active")
+          a.nav-link(routerLink="login") 登录
+        li.nav-item(routerLinkActive="active")
+          a.nav-link(routerLink="register") 注册
+.container
+  router-outlet
+.footer
+  .container
+    .row
+      .col
+        span.text-center Powered by &nbsp;
+          a(href="javascript:;") NiceFish

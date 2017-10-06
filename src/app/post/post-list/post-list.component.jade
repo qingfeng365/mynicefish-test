@@ -1,0 +1,21 @@
+.post-list-container
+  .row
+    .col-sm-12
+      .post-item-container(*ngFor="let post of postList")
+        h5
+          a([routerLink]="['/post/postdetail',post.postId]")
+            | {{post.title}}
+        p
+          i.fa.fa-thumbs-up
+          | &nbsp;{{post.likedTimes}} &nbsp;&nbsp;&nbsp;&nbsp;
+          i.fa.fa-comment
+          | &nbsp;{{post.commentTimes}} &nbsp;&nbsp;&nbsp;&nbsp;
+          i.fa.fa-eye
+          | &nbsp;{{post.readTimes}} &nbsp;&nbsp;&nbsp;&nbsp;{{post.userName }} &nbsp;&nbsp;&nbsp;&nbsp;{{post.postTime}}
+  .row
+    .col-sm-12
+      p-paginator(
+       [rows]="pageSize",
+       [totalRecords]="allRecordCount",
+       (onPageChange)="pageChanged($event)"
+       )
